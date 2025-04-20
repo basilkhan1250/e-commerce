@@ -15,7 +15,7 @@ let products = [
         name: "Smartphone with 128GB Storage",
         price: 399.99,
         category: "Electronics",
-        image: "https://example.com/images/smartphone.jpg",
+        image: "https://image-us.samsung.com/us/smartphones/galaxy-s24/all-gallery/01_E1_OnlineExclusive_SapphireBlue_Lockup_1600x1200.jpg",
         inStock: true
     },
     {
@@ -53,27 +53,27 @@ let products = [
 ];
 console.log(products)
 
-// let carListEl = document.querySelectorAll(".cars-list-container")[0];
+let productsListEl = document.querySelectorAll(".products-list-container")[0];
 
-// function listCars(cars) {
-//     for (let i = 0; i < cars.length; i++) {
-//         let carCard = makeCarCard(cars[i]);
-//         carListEl.innerHTML += carCard;
-//     }
-// }
+function listProducts(products) {
+    for (let i = 0; i < products.length; i++) {
+        let productsCard = makeProductsCard(products[i]);
+        productsListEl.innerHTML += productsCard;
+    }
+}
 
-// listCars(carsData);
+listProducts(products);
 
 
-// function makeCarCard(car) {
-//     return `<div>
-//                 <img src="${car.imgSrc}" alt="${car.name}"/>
-//                 <h2>${car.name} ${car.model}</h2>
-//                 <p>${car.color}</p>
-//                 <p>${car.price}</p>
-//             </div>
-//         `
-// }
+function makeProductsCard(products) {
+    return `<div>
+                <img src="${products.image}" alt="${products.name}"/>
+                <h2>${products.name}</h2>
+                <p>${products.category}</p>
+                <p>$${products.price}</p>
+            </div>
+        `
+}
 
 
 
