@@ -1,63 +1,79 @@
 // localStorage.clear(); 
 
 
-let carsData = [
+let products = [
     {
-        name: 'Lamborghini',
-        model: "Urus",
-        color: 'Orange',
-        price: 300000,
-        imgSrc: "https://hips.hearstapps.com/hmg-prod/images/2025-lamborghini-urus-se-phev-106-67005496322ba.jpg?crop=0.633xw:0.534xh;0.223xw,0.427xh&resize=1200:*",
-        isImported: true
+        id: 1,
+        name: "Wireless Bluetooth Headphones",
+        price: 59.99,
+        category: "Electronics",
+        image: "https://www.action.pk/cdn/shop/files/p9-wireless-bluetooth-headphones-random-colors-5.webp?v=1730371051",
+        inStock: true
     },
     {
-        name: 'Mehran',
-        model: "VX",
-        color: 'Silver',
-        price: 2500,
-        imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrJtBX7b_ukY1rNcPgP_Y7BzG2AwWJecct6Q&s",
-        isImported: false
+        id: 2,
+        name: "Smartphone with 128GB Storage",
+        price: 399.99,
+        category: "Electronics",
+        image: "https://example.com/images/smartphone.jpg",
+        inStock: true
     },
     {
-        name: 'Sonata',
-        model: "N Line",
-        color: 'White',
-        price: 60000,
-        imgSrc: "https://propakistani.pk/wp-content/uploads/2025/01/N-Line.jpg",
-        isImported: true
+        id: 3,
+        name: "4K Ultra HD Smart TV",
+        price: 699.99,
+        category: "Electronics",
+        image: "https://res.cloudinary.com/sharp-consumer-eu/image/fetch/w_3000,f_auto/https://s3.infra.brandquad.io/accounts-media/SHRP/DAM/origin/5ed1ddf8-4e73-11ef-a427-bea7e36404f4.jpg",
+        inStock: false
     },
     {
-        name: 'Havel',
-        model: "H6",
-        color: 'black',
-        price: 40000,
-        imgSrc: "https://i.ytimg.com/vi/wAC15UwhCXo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBUbNTquKFO2W1t_bhbheKPMdYgrg",
-        isImported: false
+        id: 4,
+        name: "Wireless Earbuds",
+        price: 39.99,
+        category: "Electronics",
+        image: "https://cubeonline.pk/cdn/shop/files/earfun-air-wireless-earbuds_1024x1024.jpg?v=1696404511",
+        inStock: true
+    },
+    {
+        id: 5,
+        name: "Portable Bluetooth Speaker",
+        price: 29.99,
+        category: "Electronics",
+        image: "https://cdn.thewirecutter.com/wp-content/media/2024/11/portablebluetoothspeakers-2048px-9481.jpg?auto=webp&quality=75&width=1024",
+        inStock: true
+    },
+    {
+        id: 6,
+        name: "USB-C Fast Charger",
+        price: 24.99,
+        category: "Electronics",
+        image: "https://techpoint.pk/wp-content/uploads/2022/12/mix-ch-3-min.jpg",
+        inStock: true
     }
 ];
+console.log(products)
+
+// let carListEl = document.querySelectorAll(".cars-list-container")[0];
+
+// function listCars(cars) {
+//     for (let i = 0; i < cars.length; i++) {
+//         let carCard = makeCarCard(cars[i]);
+//         carListEl.innerHTML += carCard;
+//     }
+// }
+
+// listCars(carsData);
 
 
-let carListEl = document.querySelectorAll(".cars-list-container")[0];
-
-function listCars(cars) {
-    for (let i = 0; i < cars.length; i++) {
-        let carCard = makeCarCard(cars[i]);
-        carListEl.innerHTML += carCard;
-    }
-}
-
-listCars(carsData);
-
-
-function makeCarCard(car) {
-    return `<div>
-                <img src="${car.imgSrc}" alt="${car.name}"/>
-                <h2>${car.name} ${car.model}</h2>
-                <p>${car.color}</p>
-                <p>${car.price}</p>
-            </div>
-        `
-}
+// function makeCarCard(car) {
+//     return `<div>
+//                 <img src="${car.imgSrc}" alt="${car.name}"/>
+//                 <h2>${car.name} ${car.model}</h2>
+//                 <p>${car.color}</p>
+//                 <p>${car.price}</p>
+//             </div>
+//         `
+// }
 
 
 
