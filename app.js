@@ -66,11 +66,11 @@ listProducts(products);
 
 
 function makeProductsCard(products) {
-    return `<div>
-                <img src="${products.image}" alt="${products.name}"/>
-                <h2>${products.name}</h2>
-                <p>${products.category}</p>
-                <p>$${products.price}</p>
+    return `<div class="products"> 
+                <img class="products-image" src="${products.image}" alt="${products.name}"/>
+                <h2 class="products-text" >${products.name}</h2>
+                <p class="products-text" >${products.category}</p>
+                <p class="products-text" >$${products.price}</p>
             </div>
         `
 }
