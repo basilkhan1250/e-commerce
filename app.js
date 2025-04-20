@@ -75,13 +75,6 @@ function makeProductsCard(products) {
         `
 }
 
-
-
-
-
-
-
-
 function signUp(event) {
     event.preventDefault();
 

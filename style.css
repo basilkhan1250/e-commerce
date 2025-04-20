@@ -6,7 +6,6 @@
     flex-wrap: wrap;
     justify-content: center;
 }
-
 .products{
     cursor: pointer;
     box-shadow: 6px 4px 10px 4px salmon;
