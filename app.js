@@ -15,7 +15,7 @@ let products = [
         name: "Smartphone with 128GB Storage",
         price: 399.99,
         category: "Electronics",
-        image: "https://image-us.samsung.com/us/smartphones/galaxy-s24/all-gallery/01_E1_OnlineExclusive_SapphireBlue_Lockup_1600x1200.jpg",
+        image: "https://sparx.pk/cdn/shop/files/Edge-20-Pro-Sparkling-Blue.jpg?v=1721641402",
         inStock: true
     },
     {
@@ -23,7 +23,7 @@ let products = [
         name: "4K Ultra HD Smart TV",
         price: 699.99,
         category: "Electronics",
-        image: "https://res.cloudinary.com/sharp-consumer-eu/image/fetch/w_3000,f_auto/https://s3.infra.brandquad.io/accounts-media/SHRP/DAM/origin/5ed1ddf8-4e73-11ef-a427-bea7e36404f4.jpg",
+        image: "https://www.aysonline.pk/wp-content/uploads/2024/10/TCL-LED-43V6B.jpg",
         inStock: false
     },
     {
@@ -39,7 +39,7 @@ let products = [
         name: "Portable Bluetooth Speaker",
         price: 29.99,
         category: "Electronics",
-        image: "https://cdn.thewirecutter.com/wp-content/media/2024/11/portablebluetoothspeakers-2048px-9481.jpg?auto=webp&quality=75&width=1024",
+        image: "https://fonepro.pk/wp-content/uploads/Buy-Tronsmart-T7-Portable-Speaker-in-Pakistan-at-Dab-Lew-Tech.png",
         inStock: true
     },
     {
@@ -68,9 +68,13 @@ listProducts(products);
 function makeProductsCard(products) {
     return `<div class="products"> 
                 <img class="products-image" src="${products.image}" alt="${products.name}"/>
-                <h2 class="products-text" >${products.name}</h2>
-                <p class="products-text" >${products.category}</p>
-                <p class="products-text" >$${products.price}</p>
+                <div class="products-text">
+                    <h2>${products.name}</h2>
+                    <p>${products.category}</p>
+                    <p>$${products.price}</p>
+                    <p>${products.inStock ? "In Stock" : "Out of Stock"}</p>
+                    <button class="add-to-cart" onclick="addToCart(${products.id})">Add to Cart</button>
+                </div>
             </div>
         `
 }
@@ -165,7 +169,6 @@ function login(event) {
             error[0].style.display = "none";
         }, 3000);
     }
-
 }
 
 
