@@ -172,5 +172,30 @@ function login(event) {
 }
 
 
+function addToCart(productId) {
+    const cartitem = document.querySelector(".cart-item");
+    console.log(cartitem)
 
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+    const product = products.find(p => p.id === productId);
+
+    if (product) {
+        cart.push(product);
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        setTimeout(() => {
+            cartitem.innerHTML = "";
+        }, 2000)
+
+        cartitem.innerHTML = (`${product.name} has been added to your cart!`);
+        showCart();
+    } else {
+        cartitem.innerHTML = (`${product.name} Product not found!`);
+    }
+}
+
+function showCart() {
+    const cartList = document.querySelector(".showing-cart");
+    console.log(cartList)
+}
