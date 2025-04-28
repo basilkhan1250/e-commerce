@@ -195,6 +195,7 @@ function addToCart(productId) {
     }
 }
 
+
 function showCart() {
     const cartList = document.querySelector(".showing-cart");
     console.log(cartList)
