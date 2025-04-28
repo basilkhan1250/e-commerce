@@ -62,3 +62,20 @@
     bottom: 10px;
     cursor: pointer;
 }
+
+.showing-cart {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.head-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-btn-anchor {
+    text-decoration: none;
+    color: black;
+}

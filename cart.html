@@ -11,10 +11,59 @@
 <body>
 
     <div class="cart-container">
-        <h2>Your Cart</h2>
+        <div class="head-list">
+            <h2>Your Cart</h2>
+            <button class="products-btn"><a class="product-btn-anchor" href="./products.html">products</a></button>
+        </div>
 
-        <div class="showing-cart"></div>    
+
+        <div class="showing-cart"></div>
     </div>
+
+    <script>
+
+        function showCart() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            console.log(cart)
+
+            const { id, name, image, instock, price, category } = cart
+
+            const cartList = document.querySelector(".showing-cart");
+            console.log(cartList)
+            cartList.innerHTML = ""
+            if (cart) {
+                for (i = 0; i < cart.length; i++) {
+                    let cartsProduct = makeProductsCard(cart[i])
+                    cartList.innerHTML += cartsProduct
+                }
+            }
+
+
+            function makeProductsCard(products) {
+                return `<div class="products"> 
+                <img class="products-image" src="${products.image}" alt="${products.name}"/>
+                <div class="products-text">
+                    <h2>${products.name}</h2>
+                    <p>${products.category}</p>
+                    <p>$${products.price}</p>
+                    <p>${products.inStock ? "In Stock" : "Out of Stock"}</p>
+                    <button class="add-to-cart" onclick="remove()">Remove</button>
+                </div>
+            </div>
+        `
+            }
+
+        }
+
+        // remove(){
+
+        // }
+
+        showCart();
+
+
+
+    </script>
 
     <script src="./app.js"></script>
 </body>
