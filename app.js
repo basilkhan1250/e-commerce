@@ -1,6 +1,5 @@
 // localStorage.clear(); 
 
-
 let products = [
     {
         id: 1,
@@ -8,7 +7,8 @@ let products = [
         price: 59.99,
         category: "Electronics",
         image: "https://www.action.pk/cdn/shop/files/p9-wireless-bluetooth-headphones-random-colors-5.webp?v=1730371051",
-        inStock: true
+        inStock: true,
+        quantity: 1
     },
     {
         id: 2,
@@ -16,7 +16,8 @@ let products = [
         price: 399.99,
         category: "Electronics",
         image: "https://sparx.pk/cdn/shop/files/Edge-20-Pro-Sparkling-Blue.jpg?v=1721641402",
-        inStock: true
+        inStock: true,
+        quantity: 1
     },
     {
         id: 3,
@@ -24,7 +25,8 @@ let products = [
         price: 699.99,
         category: "Electronics",
         image: "https://www.aysonline.pk/wp-content/uploads/2024/10/TCL-LED-43V6B.jpg",
-        inStock: false
+        inStock: false,
+        quantity: 1
     },
     {
         id: 4,
@@ -32,7 +34,8 @@ let products = [
         price: 39.99,
         category: "Electronics",
         image: "https://cubeonline.pk/cdn/shop/files/earfun-air-wireless-earbuds_1024x1024.jpg?v=1696404511",
-        inStock: true
+        inStock: true,
+        quantity: 1
     },
     {
         id: 5,
@@ -40,7 +43,8 @@ let products = [
         price: 29.99,
         category: "Electronics",
         image: "https://fonepro.pk/wp-content/uploads/Buy-Tronsmart-T7-Portable-Speaker-in-Pakistan-at-Dab-Lew-Tech.png",
-        inStock: true
+        inStock: true,
+        quantity: 1
     },
     {
         id: 6,
@@ -48,9 +52,11 @@ let products = [
         price: 24.99,
         category: "Electronics",
         image: "https://techpoint.pk/wp-content/uploads/2022/12/mix-ch-3-min.jpg",
-        inStock: true
+        inStock: true,
+        quantity: 1
     }
 ];
+
 console.log(products)
 
 
@@ -74,7 +80,6 @@ function makeProductsCard(products) {
                     <h2>${products.name}</h2>
                     <p>${products.category}</p>
                     <p>$${products.price}</p>
-                    <p>${products.inStock ? "In Stock" : "Out of Stock"}</p>
                     <button class="add-to-cart" onclick="addToCart(${products.id})">Add to Cart</button>
                 </div>
             </div>
@@ -179,18 +184,28 @@ function addToCart(productId) {
     console.log(cartitem)
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
+    console.log(cart)
     const product = products.find(p => p.id === productId);
+    console.log(product)
 
     if (product) {
-        cart.push(product);
+        let existingProduct = cart.find(item => item.id === product.id)
+        if (existingProduct) {
+            existingProduct.quantity += 1
+        }
+        else {
+            product.quantity = 1
+            cart.push(product);
+        }
+
         localStorage.setItem("cart", JSON.stringify(cart));
+
+        cartitem.innerHTML = (`${product.name} has been added to your cart!`);
 
         setTimeout(() => {
             cartitem.innerHTML = "";
         }, 2000)
 
-        cartitem.innerHTML = (`${product.name} has been added to your cart!`);
     } else {
         cartitem.innerHTML = (`${product.name} Product not found!`);
     }
