@@ -9,16 +9,16 @@
 </head>
 
 <body>
-
-    <div class="cart-container">
-        <div class="head-list">
-            <h2>Your Cart</h2>
-            <h3 class="total-price"></h3>
-            <button class="products-btn"><a class="product-btn-anchor" href="./products.html">products</a></button>
+    <nav class="navbar">
+        <div class="cart-container">
+            <div class="head-list">
+                <h2>Your Cart</h2>
+                <h3 class="total-price"></h3>
+                <button class="cart-button"><a class="product-btn-anchor" href="./products.html">products</a></button>
+            </div>
         </div>
-
-        <div class="showing-cart"></div>
-    </div>
+    </nav>
+    <div class="showing-cart"></div>
 
 
 
@@ -49,9 +49,6 @@
                 }
                 totalPRICE.innerHTML = `Total Price of Products is $${total.toFixed(2)}`;
             }
-
-
-
 
             totalPriceOfProduct(cart)
 
@@ -105,13 +102,13 @@
             showCart()
         }
 
-        showCart();
-
-
-
+        showCart()
     </script>
 
+    <button class="order">Order</button>
+
     <script src="./app.js"></script>
+
 </body>
 
 </html>

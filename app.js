@@ -210,12 +210,3 @@ function addToCart(productId) {
         cartitem.innerHTML = (`${product.name} Product not found!`);
     }
 }
-
-// function showCart() {
-//     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-//     console.log(cart)
-//     const cartList = document.querySelector(".showing-cart");
-//     console.log(cartList)
-// }
-
-// showCart();
