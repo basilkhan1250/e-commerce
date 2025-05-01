@@ -67,7 +67,6 @@
     color: white;
 }
 
-
 .cart-button {
     cursor: pointer;
     border-radius: 20px;
@@ -138,14 +137,11 @@
     color: black;
 }
 
-
 .order:hover {
     border: 1px solid greenyellow;
     box-shadow: 2px 2px 10px 2px black;
     background-color: greenyellow;
-
 }
-
 
 .navbar {
     position: sticky;
@@ -159,4 +155,19 @@
 .products-btn {
     height: 40px;
     width: 80px;
+}
+
+.add-to-cart {
+    height: 40px;
+    width: 100px;
+    border: 1px solid salmon;
+    background-color: transparent;
+    font-size: 15px;
+    border-radius: 18px;
+}
+
+.add-to-cart:hover {
+    background-color: salmon;
+    box-shadow: 4px 4px 10px salmon;
+    background-color: rgb(255, 218, 214);
 }
