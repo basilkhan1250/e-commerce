@@ -225,7 +225,23 @@ function order(e) {
     let users = JSON.parse(localStorage.getItem("users")) || [];
     console.log(users[0].userEmail)
 
-    let emailMatch = users.map( user  => user.userEmail === orderEmail )
+    let emailMatch = users.map(user => user.userEmail === orderEmail)
     console.log(emailMatch)
+
+
+    let newOrder = {
+        name: orderName,
+        number: orderNum,
+        email: orderEmail
+    };
+
+    let orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+    orders.push(newOrder);
+
+    localStorage.setItem("orders", JSON.stringify(orders));
+
+    console.log("Order saved:", newOrder);
+
 
 }
