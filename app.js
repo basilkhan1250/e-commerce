@@ -210,3 +210,22 @@ function addToCart(productId) {
         cartitem.innerHTML = (`${product.name} Product not found!`);
     }
 }
+
+function order(e) {
+    e.preventDefault()
+    console.log("thanks for your order")
+
+    let orderName = document.querySelector(".name").value
+    console.log(orderName)
+    let orderNum = document.querySelector(".number").value
+    console.log(orderNum)
+    let orderEmail = document.querySelector(".email").value
+    console.log(orderEmail)
+
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    console.log(users[0].userEmail)
+
+    let emailMatch = users.map( user  => user.userEmail === orderEmail )
+    console.log(emailMatch)
+
+}

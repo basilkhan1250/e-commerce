@@ -4,13 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 
 <body>
     <h1>Order</h1>
 
-<script src="./app.js"></script>
+    <div class="form">
+        <form onsubmit="order(event)">
+            <label for="name"> Enter your Name :
+                <input type="text" name="name" id="name" class="name" placeholder="Name" required>
+            </label><br>
+            <label for="number"> Enter your Contact Number :
+                <input type="number" name="number" id="number" class="number" placeholder="contact Number" required>
+            </label><br>
+            <label for="email"> Enter your Email :
+                <input type="email" name="email" id="email" class="email" placeholder="Email" required>
+            </label><br>
+            <button>submit</button>
+        </form>
+    </div>
+
+
+    <script src="./app.js"></script>
 </body>
 
 </html>
