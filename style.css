@@ -184,7 +184,7 @@ body {
     display: block;
     border-radius: 25px;
     box-shadow: 2px 2px 10px 2px black;
-    height: 200px;
+    height: 100%;
 }
 
 
@@ -220,4 +220,44 @@ h1 {
 
 .btn:hover {
     background-color: rgb(205, 100, 205);
+}
+
+
+
+
+
+
+
+.form {
+    background: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.508);
+    width: 300px;
+}
+
+.form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #556270;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.form button:hover {
+    background-color: #FF6B6B;
 }
